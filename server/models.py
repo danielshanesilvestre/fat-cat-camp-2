@@ -9,10 +9,10 @@ from config import db
 
 class Owner(db.Model, SerializerMixin):
     __tablename__ = "owners"
-
-    serialize_rules = ("-cats.owner", )
+    serialize_rules = ("-cats.owner", "-cats.owner_id")
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
 
     # Relationships
     cats = db.relationship("Cat", back_populates="owner")
@@ -21,10 +21,10 @@ class Owner(db.Model, SerializerMixin):
 
 class Cat(db.Model, SerializerMixin):
     __tablename__ = "cats"
-
     serialize_rules = ("-owner.cats", )
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
 
     # Relationships
     owner_id = db.Column(db.Integer, db.ForeignKey("owners.id"))
