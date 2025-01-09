@@ -1,0 +1,13 @@
+
+
+
+
+.nav-link {
+    margin: 1rem;
+    background-color: beige;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 3px;
+    color: darkslategray;
+    text-decoration: none;
+}

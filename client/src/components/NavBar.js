@@ -1,11 +1,12 @@
 
 import { NavLink } from "react-router";
+import "./NavBar.css";
 
 function NavBar() {
 
   return <nav>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/owners">Owners</NavLink>
+    <NavLink to="/" className={"nav-link"}>Home</NavLink>
+    <NavLink to="/owners" className={"nav-link"}>Owners</NavLink>
   </nav>
 }
 
